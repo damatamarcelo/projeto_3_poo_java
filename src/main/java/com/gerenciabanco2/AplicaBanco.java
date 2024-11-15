@@ -2,8 +2,8 @@ package com.gerenciabanco2;
 
 public class AplicaBanco {
     private Cliente cliente;
-    private double aplicarCdb = 0.0;
-    private double aplicarLci = 0.0;
+    private double cdb = 0.0;
+    private double lci = 0.0;
 
     public AplicaBanco(Cliente cliente) {
         this.cliente = cliente;
@@ -17,19 +17,19 @@ public class AplicaBanco {
         this.cliente = cliente;
     }
 
-    public double getAplicarCdb() {
-        return aplicarCdb;
+    public double getcdb() {
+        return cdb;
     }
 
-    public void setAplicarCdb(double aplicarCdb) {
-        this.aplicarCdb = aplicarCdb;
+    public void setcdb(double cdb) {
+        this.cdb = cdb;
     }
 
-    public double getAplicarLci() {
-        return aplicarLci;
+    public double getlci() {
+        return lci;
     }
 
-    public void setAplicarLci(double aplicarLci) {
-        this.aplicarLci = aplicarLci;
+    public void setlci(double lci) {
+        this.lci = lci;
     }
 }
