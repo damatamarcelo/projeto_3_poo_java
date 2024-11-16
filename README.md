@@ -5,3 +5,4 @@ Criação da classe Conta Banco, seu constructor, getters e setters;
 Criação da classe Aplica Banco, seu constructor, geters e setters;
 Criação dos métodos Depsitar, Sacar e Consultar Saldo da classe Conta Banco;
 Correção no nome de variáveis na classe Aplica Banco;
+Desenvolvimento da lógica do/while, switch/case para o menu de opçôes da classe Conta Banco;
