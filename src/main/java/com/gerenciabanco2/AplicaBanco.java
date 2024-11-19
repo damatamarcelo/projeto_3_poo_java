@@ -35,19 +35,16 @@ public class AplicaBanco {
         this.lci = lci;
     }
 
-    public void aplicarCdb(double valor, int prazoAplicacao) {
-        double taxaAplicAno = 1.1; // 10% aa
-        double taxaAplicPeriodo = taxaAplicAno / prazoAplicacao;
-        double totalAplic = valor * taxaAplicPeriodo;
-        setcdb(totalAplic);
-        double rendAplic = totalAplic - valor;
+    public void aplicarCdb(double valorAplic, int prazoAplic) {
+        double taxaJurosAno = 0.10; // Taxa de 10% ao ano
+        double taxaJurosMes = taxaJurosAno / 12; // Conversão para taxa mensal
+        double montante = valorAplic * Math.pow(1 + taxaJurosMes, prazoAplic);
+        double rendBruto = montante - valorAplic;
 
-        System.out.println("\nValor a ser applicado R$ " + String.format("%.2f", valor));
-        System.out.println("\nPeríodo da aplicação: " + prazoAplicacao + "meses");
-        System.out.println(
-                "\nValor bruto dos rendimentos (Impostos não aplicados R$ )" + String.format("%.2f", rendAplic));
-        System.out.println("\nSua aplicação foi realizada com sucesso");
+        setcdb(montante);
 
+        System.out.println("Montante após " + prazoAplic + " meses: R$ " + montante);
+        System.out.println("Rendimento bruto obtidos no período (Sem impostos) R$ " + String.format("%.2f", rendBruto));
     }
 
     public void aplicarLci(double valor, int prazoAplicacao) {
