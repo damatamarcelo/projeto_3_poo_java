@@ -9,3 +9,4 @@ Desenvolvimento da lógica do/while, switch/case para o menu de opçôes da clas
 Desenvolvimento dos métodos Aplicar CDB e Aplicar LCI, e suas lógicas de cálculo. Criação do menu de opções com do/while e switch/case;
 Ajuste da lógica (utilização da fórmula dos juros compostos) a ser implementada nos dois casos;
 Conclusão da classe Aplica Banco, com sua lógica, menu de opções e métodos;
+Desenvolvimento do Menu de opções para acesso aos serviços de conta, ou investimentos;

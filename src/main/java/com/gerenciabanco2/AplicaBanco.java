@@ -61,7 +61,7 @@ public class AplicaBanco {
         double taxaJurosAno = 0.08; // Taxa de 8% ao ano
         double taxaJurosMes = taxaJurosAno / 12; // Conversão para taxa mensal
 
-        if (valorAplic >= 1 && prazoAplic >= 9) {
+        if (valorAplic > 0 && prazoAplic >= 9) {
             double montante = valorAplic * Math.pow(1 + taxaJurosMes, prazoAplic);
 
             double rendBruto = montante - valorAplic;
