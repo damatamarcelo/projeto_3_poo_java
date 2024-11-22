@@ -12,3 +12,4 @@ Conclusão da classe Aplica Banco, com sua lógica, menu de opções e métodos;
 Desenvolvimento do Menu de opções para acesso aos serviços de conta, ou investimentos;
 Conclusão do Menu de opções na classe Gerencia Banco. Serão feitos testes para verificar se o programa funciona corretamente;
 Ajustes no código, e tentativa de tratamento de código.
+Correções e tratamento de erros;

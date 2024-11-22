@@ -23,43 +23,46 @@ public class GerenciaBanco2 {
         System.out.println("-----Selecione a opção desejada----");
         System.out.println("|----1 - Transações comuns--------|");
         System.out.println("|----2 - Investimentos------------|");
-        System.out.println("|----3 - Sair---------------------|");
     }
 
     public static void MenuOpcoes() {
-        int opcao;
+        try (Scanner input = new Scanner(System.in)) {
+            int opcao = -1;
 
-        do {
-            while (!input.hasNextInt()) {
-                System.out.println("Opção inválida. Por favor, digite um número inteiro.");
-                input.next();
-            }
+            do {
+                mostrarMenu();
+                System.out.println("Escolha uma opção: ");
 
-            mostrarMenu();
+                if (input.hasNextInt()) {
+                    opcao = input.nextInt();
+                    input.nextLine();
+                } else {
+                    System.out.println("Entrada inválida! Digite um número.");
+                    input.nextLine();
+                    continue;
+                }
 
-            opcao = input.nextInt();
-
-            Cliente cliente = ObterDadosClientes();
-
-            switch (opcao) {
-                case 1:
-                    ContaBanco conta = new ContaBanco(cliente);
-                    System.out.println(conta.toString());
-                    conta.opcoes();
-                    mostrarMenu();
-                case 2:
-                    AplicaBanco investimento = new AplicaBanco(cliente);
-                    System.out.println(cliente.toString());
-                    investimento.opcoesInvest();
-                    mostrarMenu();
-                case 3:
-                    System.out.println("Obrigado por utilizar nossos serviços!");
-                    break;
-                default:
-                    System.out.println("Opção inválida! Tente novamente");
-                    mostrarMenu();
-            }
-        } while (opcao != 3);
+                switch (opcao) {
+                    case 1:
+                        Cliente clienteConta = ObterDadosClientes();
+                        ContaBanco conta = new ContaBanco(clienteConta);
+                        System.out.println(conta.toString());
+                        conta.opcoes();
+                        break;
+                    case 2:
+                        Cliente clienteInv = ObterDadosClientes();
+                        AplicaBanco investimento = new AplicaBanco(clienteInv);
+                        System.out.println(clienteInv.toString());
+                        investimento.opcoesInvest();
+                        break;
+                    case 0:
+                        System.out.println("Saindo do sistema...");
+                        break;
+                    default:
+                        System.out.println("Opção inválida! Tente novamente");
+                }
+            } while (opcao != 0);
+        }
         System.exit(0);
     }
 

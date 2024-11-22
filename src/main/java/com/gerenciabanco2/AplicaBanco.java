@@ -112,8 +112,7 @@ public class AplicaBanco {
                         aplicarLci(valorAplicLci, prazoAplicLci);
                         break;
                     case 3:
-                        System.out.println("Retornando ao Menu Principal!\n");
-                        System.out.println("Saindo...");
+                        System.out.println("Obrigadi oir utilizar nossos serviços");
                         break;
                     default:
                         System.out.println("Opção inválida! Tente novamente");

@@ -83,8 +83,7 @@ public class ContaBanco {
                         System.out.println("Seu saldo é de R$ " + String.format("%.2f", consutarSaldo()));
                         break;
                     case 4:
-                        System.out.println("Retornando ao Menu Principal\n");
-                        System.out.println("Saindo...");
+                        System.out.println("Obrigadi oir utilizar nossos serviços");
                         break;
                     default:
                         System.out.println("Opção inválida! Tente novamente");
