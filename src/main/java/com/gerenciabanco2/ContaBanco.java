@@ -51,17 +51,20 @@ public class ContaBanco {
         return saldo;
     }
 
+    public static void mostrarMenu() {
+        System.out.println("-----Selecione a opção desejada----");
+        System.out.println("|----1 - Realizar Depósito--------|");
+        System.out.println("|----2 - Realizar Saque-----------|");
+        System.out.println("|----3 - Consultar Saldo----------|");
+        System.out.println("|----4 - Sair---------------------|");
+    }
+
     public void opcoes() {
         try (Scanner input = new Scanner(System.in)) {
             int opcao;
 
             do {
-                System.out.println("----------Seja Bem Vindo!----------");
-                System.out.println("-----Selecione a opção desejada----");
-                System.out.println("|----1 - Realizar Depósito--------|");
-                System.out.println("|----2 - Realizar Saque-----------|");
-                System.out.println("|----3 - Consultar Saldo----------|");
-                System.out.println("|----4 - Sair---------------------|");
+                ContaBanco.mostrarMenu();
 
                 opcao = input.nextInt();
 
@@ -80,11 +83,12 @@ public class ContaBanco {
                         System.out.println("Seu saldo é de R$ " + String.format("%.2f", consutarSaldo()));
                         break;
                     case 4:
-                        System.out.println("Obrigado por utilizar nossos serviços!");
+                        System.out.println("Retornando ao Menu Principal\n");
+                        System.out.println("Saindo...");
                         break;
                     default:
                         System.out.println("Opção inválida! Tente novamente");
-                        opcoes();
+                        mostrarMenu();
                 }
             } while (opcao != 4);
             System.exit(0);

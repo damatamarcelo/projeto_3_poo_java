@@ -48,7 +48,7 @@ public class AplicaBanco {
 
             System.out.println(
                     "Valor apurado no período R$: " + String.format("%.2f", montante) + " | Período investido: "
-                            + prazoAplic + "meses");
+                            + prazoAplic + " meses");
             System.out.println(
                     "Rendimento bruto obtidos no período (Impostos não aplicados) R$: "
                             + String.format("%.2f", rendBruto));
@@ -70,7 +70,7 @@ public class AplicaBanco {
 
             System.out.println(
                     "Valor apurado no período R$: " + String.format("%.2f", montante) + " | Período investido: "
-                            + prazoAplic + "meses");
+                            + prazoAplic + " meses");
             System.out.println(
                     "Rendimento bruto obtidos no período (Impostos não aplicados) R$: "
                             + String.format("%.2f", rendBruto));
@@ -79,16 +79,19 @@ public class AplicaBanco {
         }
     }
 
+    public static void mostrarMenu() {
+        System.out.println("-----Selecione a opção desejada----");
+        System.out.println("|----1 - Investir em CDB----------|");
+        System.out.println("|----2 - Investir em LCI----------|");
+        System.out.println("|----3 - Sair---------------------|");
+    }
+
     public void opcoesInvest() {
         try (Scanner input = new Scanner(System.in)) {
             int opcao;
 
             do {
-                System.out.println("----------Seja Bem Vindo!----------");
-                System.out.println("-----Selecione a opção desejada----");
-                System.out.println("|----1 - Investir em CDB----------|");
-                System.out.println("|----2 - Investir em LCI----------|");
-                System.out.println("|----3 - Sair---------------------|");
+                AplicaBanco.mostrarMenu();
 
                 opcao = input.nextInt();
 
@@ -109,11 +112,12 @@ public class AplicaBanco {
                         aplicarLci(valorAplicLci, prazoAplicLci);
                         break;
                     case 3:
-                        System.out.println("Obrigado por utilizar nossos serviços!");
+                        System.out.println("Retornando ao Menu Principal!\n");
+                        System.out.println("Saindo...");
                         break;
                     default:
                         System.out.println("Opção inválida! Tente novamente");
-                        opcoesInvest();
+                        mostrarMenu();
                 }
 
             } while (opcao != 3);
