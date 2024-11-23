@@ -13,3 +13,4 @@ Desenvolvimento do Menu de opções para acesso aos serviços de conta, ou inves
 Conclusão do Menu de opções na classe Gerencia Banco. Serão feitos testes para verificar se o programa funciona corretamente;
 Ajustes no código, e tentativa de tratamento de código.
 Correções e tratamento de erros;
+Programa executando sem erros. Conclusão do projeto;
